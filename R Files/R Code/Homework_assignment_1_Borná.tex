@@ -1,0 +1,376 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Homework\_assignment\_1\_BornÃ¡.R},
+            pdfauthor={Gebruiker},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Homework\_assignment\_1\_BornÃ¡.R}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Gebruiker}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{Tue Sep 04 11:50:05 2018}
+
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(TeachingDemos)}
+\KeywordTok{txtStart}\NormalTok{(}\StringTok{"Homework assignment 1.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Output being copied to text file,
+## use txtStop to end
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Homework Assignment 1}
+\CommentTok{# Name: Borná Djavdan }
+\CommentTok{# ANR: 749817}
+
+\CommentTok{# Exercise 1}
+\KeywordTok{load}\NormalTok{(}\StringTok{"~/Study/Semester 3/Econometrics for ECO/R Files/R Data/bwght.RData"}\NormalTok{)}
+\KeywordTok{attach}\NormalTok{(data)}
+
+\CommentTok{#1a) }
+\CommentTok{# There are as many women in the sample as there are observations in the data. }
+\KeywordTok{sum}\NormalTok{(cigs}\OperatorTok{>}\DecValTok{0}\NormalTok{) }\CommentTok{#There are 212 women who report smoking at least 1 cigaret per day during pregnancy. }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 212
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#1b)}
+\KeywordTok{mean}\NormalTok{(cigs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.087176
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The average number of cigarets a woman smokes per day during pregnancy equals about 2.09. Before I answer the next question I would like to describe what I define as a 'typical' woman. Acording to the sample, the typical woman doesn't smoke.}
+\CommentTok{# Therefore I conclude that this average is not a good measure for the average of the 'typical' woman. Some women smoke during pregnancy and some do not, this mean makes it look like all women smoke.}
+
+\CommentTok{# 1c) }
+\NormalTok{mean_smoke_during_pregnancy <-}\StringTok{ }\KeywordTok{mean}\NormalTok{(cigs[cigs}\OperatorTok{>}\DecValTok{0}\NormalTok{])}
+\NormalTok{mean_smoke_during_pregnancy}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 13.66509
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Among women who smoke, the average cigarettes smoked per day during pregnancy is about 13.67. }
+\CommentTok{#This average is higher than the answer in b, because now the average does not include the women who do not smoke, which would skew the average lower. }
+
+\CommentTok{# 1d) }
+\KeywordTok{mean}\NormalTok{(}\KeywordTok{na.omit}\NormalTok{(motheduc))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 12.93583
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The average of 'motheduc' is about 12.94, I had make sure that the missing value was not used in the mean calculation, because otherwise the mean function gave 'NA' as output. }
+\KeywordTok{sum}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(motheduc))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The amount of observations that are missing from this variable is only one (1). }
+
+\CommentTok{#1e) }
+\KeywordTok{mean}\NormalTok{(faminc)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29.02666
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sd}\NormalTok{(faminc)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 18.73928
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The average family income in 1988 is $29026.66. The standard deviation of family income in 1988 is $18739.28. The unit in the data sample is in 1988 U.S. Dollars. }
+
+\CommentTok{#1f)}
+\NormalTok{rich <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(faminc}\OperatorTok{>=}\DecValTok{30}\NormalTok{) }
+\KeywordTok{sum}\NormalTok{(rich)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 574
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# There are 574 families (observations) catagorized as 'rich' (meaning family income is above or equal to $30.000). }
+
+\CommentTok{#1g)}
+\KeywordTok{table}\NormalTok{(rich,cigs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     cigs
+## rich   0   1   2   3   4   5   6   7   8   9  10  12  15  20  30  40  46
+##    0 655   0   3   6   6  11   3   2   4   1  44   2  14  51   4   6   1
+##    1 521   3   1   1   3   8   3   2   1   0  11   3   5  11   1   0   0
+##     cigs
+## rich  50
+##    0   1
+##    1   0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# There are 53 'rich' women who smoke during pregnancy and 159 women classified as 'poor' who smoke during pregnancy inside the sample.}
+\CommentTok{# Yes, I would say there is a strking difference, the amount of women who smoke differs by 106 more for the 'poor'women. }
+\KeywordTok{mean}\NormalTok{(cigs[cigs}\OperatorTok{>}\DecValTok{0}\OperatorTok{&}\NormalTok{rich}\OperatorTok{==}\DecValTok{0}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 14.62893
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{mean}\NormalTok{(cigs[cigs}\OperatorTok{>}\DecValTok{0}\OperatorTok{&}\NormalTok{rich}\OperatorTok{==}\DecValTok{1}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10.77358
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Also the 'poor' women who smoke during pregnancy, smoke about 4 more cigarettes per day than the 'rich' women who smoke during pregnancy. }
+\KeywordTok{detach}\NormalTok{(data)}
+
+\CommentTok{# Exercise 2}
+\KeywordTok{load}\NormalTok{(}\StringTok{"~/Study/Semester 3/Econometrics for ECO/R Files/R Data/jtrain2.RData"}\NormalTok{)}
+\KeywordTok{attach}\NormalTok{(data)}
+
+\CommentTok{#2a)}
+\KeywordTok{sum}\NormalTok{(train) }\OperatorTok{/}\StringTok{ }\DecValTok{445}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.4157303
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The fraction of men receiving low-income job training is calcualted using the summation of train values devided by the number of total observations in this dataset.}
+\CommentTok{#2b) }
+\KeywordTok{mean}\NormalTok{(re78[train}\OperatorTok{==}\DecValTok{1}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6.349145
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{mean}\NormalTok{(re78[train}\OperatorTok{==}\DecValTok{0}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4.554802
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The average income of men receiving job training is about $6349.15, and the average income of men receiving no job training is about $4554.80. }
+\CommentTok{# Yes, I would say this difference would consitute as economically large. }
+\CommentTok{# This is my conclusion because the averge income differs by almost 40% more for men who have received training. }
+
+\CommentTok{#2c) }
+\KeywordTok{sum}\NormalTok{(unem78}\OperatorTok{&}\NormalTok{train}\OperatorTok{==}\DecValTok{1}\NormalTok{)}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(unem78)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3284672
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sum}\NormalTok{(unem78}\OperatorTok{&}\NormalTok{train}\OperatorTok{==}\DecValTok{0}\NormalTok{)}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(unem78)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.6715328
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The fraction of the men who received job training and are unemployed is about 0.3285. }
+\CommentTok{# The fraction of the men who did not receive job training and are unemployed is about 0.6715. }
+\CommentTok{# The difference is significant, because the fraction of men who did not receive job training and are unemployed is more than twice the fraction of the men who received job training and are unemployed. }
+\CommentTok{# Therefore I can say that receiving jobtraining is positively effective in gaining employment. }
+
+\CommentTok{#2d) Yes, it does appear that job training was effective, because the earnings of people receiving job training are on average significantly higher than the people receiving no job training. }
+\CommentTok{# And when comparing the unemployment rate of people who have received jobtraining and those who have not received jobtraining, the jobtraining was positively effective in combatting unempoyment. }
+\CommentTok{# Therefor I would conclude that it does appear that the job training program was effective. }
+\CommentTok{# What would make our conclusions more convincing would be to use panel data, a.k.a to add the dimension of time to the data and to be able to see if the findings would be consistent over time. }
+
+\KeywordTok{detach}\NormalTok{(data)}
+\KeywordTok{txtStop}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}

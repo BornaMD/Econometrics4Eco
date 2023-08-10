@@ -1,0 +1,61 @@
+> setwd("C:/Users/Gebruiker/Documents/Study/Semester 3/Econometrics for ECO/R Files/R Data")
+> library(haven)
+> library(AER)
+> library(car)
+> data <- read_stata("~/Study/Semester 3/Econometrics for ECO/R Files/R Data/fertility.dta")
+> attach(data)
+> reg1 <- lm(children ~ educ + age + agesq)
+> reg1
+
+Call:
+lm(formula = children ~ educ + age + agesq)
+
+Coefficients:
+(Intercept)         educ          age        agesq  
+  -4.138307    -0.090575     0.332449    -0.002631  
+
+> 100 * -0.090575
+[1] -9.0575
+> reg2 <- lm(educ ~ frsthalf + age + agesq)
+> reg2
+
+Call:
+lm(formula = educ ~ frsthalf + age + agesq)
+
+Coefficients:
+(Intercept)     frsthalf          age        agesq  
+  9.6928643   -0.8522854   -0.1079504   -0.0005056  
+
+> reg3 <- ivreg(children ~ age + agesq + educ | age + agesq + frsthalf)
+> reg3
+
+Call:
+ivreg(formula = children ~ age + agesq + educ | age + agesq +     frsthalf)
+
+Coefficients:
+(Intercept)          age        agesq         educ  
+  -3.387805     0.323605    -0.002672    -0.171499  
+
+> reg4 <- lm(children ~ educ + age + agesq + electric + tv + bicycle)
+> reg4
+
+Call:
+lm(formula = children ~ educ + age + agesq + electric + tv + 
+    bicycle)
+
+Coefficients:
+(Intercept)         educ          age        agesq     electric           tv      bicycle  
+  -4.389784    -0.076709     0.340204    -0.002708    -0.302729    -0.253144     0.317895  
+
+> reg5 <- ivreg(children ~ age + agesq + electric + tv + bicycle + 
++ educ | age + agesq + electric + tv + bicycle + frsthalf)
+> reg5
+
+Call:
+ivreg(formula = children ~ age + agesq + electric + tv + bicycle +     educ | age + agesq + electric + tv + bicycle + frsthalf)
+
+Coefficients:
+(Intercept)          age        agesq     electric           tv      bicycle         educ  
+  -3.591332     0.328145    -0.002722    -0.106531    -0.002555     0.332072    -0.163981  
+
+> detach(data)

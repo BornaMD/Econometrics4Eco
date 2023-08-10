@@ -1,0 +1,149 @@
+> load("~/Study/Semester 3/Econometrics for ECO/R Files/R Data/WAGE2.RData")
+> attach(data)
+> mean(wage)
+[1] 957.9455
+> mean(IQ)
+[1] 101.2824
+> sd(IQ)
+[1] 15.05264
+> regIQ <- lm(wage ~ IQ)
+> regIQ
+
+Call:
+lm(formula = wage ~ IQ)
+
+Coefficients:
+(Intercept)           IQ  
+    116.992        8.303  
+
+> summary(regIQ)
+
+Call:
+lm(formula = wage ~ IQ)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-898.7 -256.5  -47.3  201.1 2072.6 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 116.9916    85.6415   1.366    0.172    
+IQ            8.3031     0.8364   9.927   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 384.8 on 933 degrees of freedom
+Multiple R-squared:  0.09554,	Adjusted R-squared:  0.09457 
+F-statistic: 98.55 on 1 and 933 DF,  p-value: < 2.2e-16
+
+> length(regIQ$fitted.values)
+[1] 935
+> regIQ$coefficients
+(Intercept)          IQ 
+ 116.991565    8.303064 
+> 8.3 * 15
+[1] 124.5
+> regIQl <- lm(lwage ~ IQ)
+> regIQl
+
+Call:
+lm(formula = lwage ~ IQ)
+
+Coefficients:
+(Intercept)           IQ  
+   5.886994     0.008807  
+
+> summary(regIQl)
+
+Call:
+lm(formula = lwage ~ IQ)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.09324 -0.25547  0.02261  0.27544  1.21487 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 5.8869944  0.0890206   66.13   <2e-16 ***
+IQ          0.0088072  0.0008694   10.13   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.3999 on 933 degrees of freedom
+Multiple R-squared:  0.09909,	Adjusted R-squared:  0.09813 
+F-statistic: 102.6 on 1 and 933 DF,  p-value: < 2.2e-16
+
+> length(regIQl$fitted.values)
+[1] 935
+> regIQl$coefficients
+(Intercept)          IQ 
+5.886994354 0.008807156 
+> 0.0088 * 15
+[1] 0.132
+> LIQ <- log(IQ)
+> lm(lwage ~ LIQ)
+
+Call:
+lm(formula = lwage ~ LIQ)
+
+Coefficients:
+(Intercept)          LIQ  
+      2.942        0.833  
+
+> 0.833 * 15
+[1] 12.495
+> detach(data)
+> load("~/Study/Semester 3/Econometrics for ECO/R Files/R Data/MEAP93.RData")
+> attach(data)
+> summary(math10)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1.90   16.62   23.40   24.11   30.05   66.70 
+> sd(math10)
+[1] 10.49361
+> 30.05 - 16.62
+[1] 13.43
+> summary(expend)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   3332    3821    4145    4377    4659    7419 
+> sd(expend)
+[1] 775.7897
+> 4659 - 3821
+[1] 838
+> regMath <- lm(math10 ~ log(expend))
+> regMath
+
+Call:
+lm(formula = math10 ~ log(expend))
+
+Coefficients:
+(Intercept)  log(expend)  
+     -69.34        11.16  
+
+> summary(regMath)
+
+Call:
+lm(formula = math10 ~ log(expend))
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-22.343  -7.100  -0.914   6.148  39.093 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  -69.341     26.530  -2.614 0.009290 ** 
+log(expend)   11.164      3.169   3.523 0.000475 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 10.35 on 406 degrees of freedom
+Multiple R-squared:  0.02966,	Adjusted R-squared:  0.02727 
+F-statistic: 12.41 on 1 and 406 DF,  p-value: 0.0004752
+
+> length(regMath$fitted.values)
+[1] 408
+> regMath$coefficients
+(Intercept) log(expend) 
+  -69.34116    11.16440 
+> 11.1644/10
+[1] 1.11644
+> detach(data)
